@@ -58,7 +58,7 @@ public class CRUDusuarios{
                 total += 20.5 - usuario.getDescuentos();
             }
         }
-        System.out.print("El total de ingresos del periódico es: " + total + "€.");
+        System.out.printf("El total de ingresos del periódico es:  %.2f€\n", total);
         return total;
     }
 }
