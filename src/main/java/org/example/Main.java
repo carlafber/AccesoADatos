@@ -22,6 +22,7 @@ public class Main {
                         CRUDusuarios.buscarUsusario(lista_usuarios);
                         break;
                     case 3:
+                        CRUDusuarios.totalIngresos(lista_usuarios);
                         break;
                 }
             } while (opcion != 0);

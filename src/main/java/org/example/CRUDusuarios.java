@@ -24,9 +24,9 @@ public class CRUDusuarios{
         Usuario nuevo_usuario = new Usuario(id, contrasena, descuentos, premium);
         lista.add(nuevo_usuario);
 
-        /*for (Usuario usuario : lista) {
+        for (Usuario usuario : lista) {
             System.out.println("Nuevo usuario creado " + usuario);
-        }*/
+        }
 
         return lista;
     }
@@ -47,5 +47,18 @@ public class CRUDusuarios{
         }
 
         return lista;
+    }
+
+    public static double totalIngresos(ArrayList<Usuario> lista) {
+        double total = 0;
+        for (Usuario usuario : lista) {
+            if(usuario.isPremium()){
+                total += 35.5 - usuario.getDescuentos();
+            } else {
+                total += 20.5 - usuario.getDescuentos();
+            }
+        }
+        System.out.print("El total de ingresos del periódico es: " + total + "€.");
+        return total;
     }
 }
