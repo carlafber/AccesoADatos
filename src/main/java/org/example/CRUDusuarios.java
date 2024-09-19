@@ -2,16 +2,13 @@ package org.example;
 
 import java.util.*;
 
-public class CRUDusuarios {
-    public static void anadir() {
-    }
-
-    public static ArrayList anadirUsusario(ArrayList lista) {
-        Scanner in = new Scanner(System.in);
+public class CRUDusuarios{
+    static Scanner in = new Scanner(System.in);
+    public static ArrayList<Usuario> anadirUsusario(ArrayList<Usuario> lista) {
         System.out.print("\nPara añadir un usuario, introduzca los siguientes datos: \n Identificador (correo electrónico): ");
-        String id = in.nextLine();
+        String id = in.next();
         System.out.print(" Contraseña: ");
-        String contrasena = in.nextLine();
+        String contrasena = in.next();
         System.out.print(" Importe de los descuentos aplicados: ");
         double descuentos = in.nextDouble();
         System.out.print(" ¿Desea adquirir la condición de 'premium'? (Para adquirirla, introduzca '1', si no, '2'): ");
@@ -27,8 +24,26 @@ public class CRUDusuarios {
         Usuario nuevo_usuario = new Usuario(id, contrasena, descuentos, premium);
         lista.add(nuevo_usuario);
 
-        for (Object usuario : lista) {
+        /*for (Usuario usuario : lista) {
             System.out.println("Nuevo usuario creado " + usuario);
+        }*/
+
+        return lista;
+    }
+
+    public static ArrayList<Usuario> buscarUsusario(ArrayList<Usuario> lista) {
+        System.out.print("\nPara buscar un usuario, introduzca el identificador (correo electrónico): ");
+        String id = in.next();
+        int index = -1;
+        for (Usuario usuario : lista) {
+            if (usuario.getId().equals(id)) {
+                index = lista.indexOf(usuario);
+            }
+        }
+        if (index != -1) {
+            System.out.println("Usuario encontrado correctamente." + lista.get(index));
+        } else {
+            System.out.println("El usuario no existe.");
         }
 
         return lista;

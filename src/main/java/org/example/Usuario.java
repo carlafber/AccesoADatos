@@ -22,6 +22,6 @@ public class Usuario extends Cliente {
 
     @Override
     public String toString() {
-        return "\n Id: " + getId() + "\n Contraseña: " + getContrasena() + "\n Descuentos: " + getDescuentos() + "\n Premium: " + isPremium();
+        return "\nId: " + getId() + "   Contraseña: " + getContrasena() + "   Descuentos: " + getDescuentos() + "   Premium: " + isPremium() + "\n";
     }
 }
