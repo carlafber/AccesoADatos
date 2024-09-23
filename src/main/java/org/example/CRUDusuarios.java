@@ -4,7 +4,8 @@ import java.util.*;
 
 public class CRUDusuarios{
     static Scanner in = new Scanner(System.in);
-    public static ArrayList<Usuario> anadirUsusario(ArrayList<Usuario> lista) {
+
+    public static void anadirUsusario(ArrayList<Usuario> lista) {
         System.out.print("\nPara añadir un usuario, introduzca los siguientes datos: \n Identificador (correo electrónico): ");
         String id = in.next();
         System.out.print(" Contraseña: ");
@@ -28,10 +29,9 @@ public class CRUDusuarios{
             System.out.println("Nuevo usuario creado " + usuario);
         }
 
-        return lista;
     }
 
-    public static ArrayList<Usuario> buscarUsusario(ArrayList<Usuario> lista) {
+    public static void buscarUsusario(ArrayList<Usuario> lista) {
         System.out.print("\nPara buscar un usuario, introduzca el identificador (correo electrónico): ");
         String id = in.next();
         int index = -1;
@@ -46,10 +46,9 @@ public class CRUDusuarios{
             System.out.println("El usuario no existe.");
         }
 
-        return lista;
     }
 
-    public static double totalIngresos(ArrayList<Usuario> lista) {
+    public static void totalIngresos(ArrayList<Usuario> lista) {
         double total = 0;
         for (Usuario usuario : lista) {
             if(usuario.isPremium()){
@@ -59,6 +58,5 @@ public class CRUDusuarios{
             }
         }
         System.out.printf("El total de ingresos del periódico es:  %.2f€\n", total);
-        return total;
     }
 }
