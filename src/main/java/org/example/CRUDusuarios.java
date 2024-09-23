@@ -16,10 +16,10 @@ public class CRUDusuarios{
         boolean premium = false;
         if (respuesta == 1) {
             premium = true;
-        } else if (respuesta == 2) {
-            premium = false;
         } else {
-            System.out.println("Respuesta inválida.");
+            if (respuesta != 2) {
+                System.out.println("Respuesta inválida.");
+            }
         }
         Usuario nuevo_usuario = new Usuario(id, contrasena, descuentos, premium);
         lista.add(nuevo_usuario);
