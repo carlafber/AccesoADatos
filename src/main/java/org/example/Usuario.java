@@ -1,5 +1,4 @@
 package org.example;
-import java.util.*;
 
 public class Usuario extends Cliente {
     private boolean premium;
